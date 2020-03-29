@@ -42,7 +42,7 @@ async def calculate_steps(steps: Steps):
             else:
                 temp = statics.fibonacci_old + statics.fibonacci_new
                 statics.fibonacci_old = statics.fibonacci_new
-                statics.fibonacci_new = temp 
+                statics.fibonacci_new = temp
         return {JSON_KEY: statics.fibonacci_new}
 
     else:
