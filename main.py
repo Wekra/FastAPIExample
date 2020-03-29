@@ -1,11 +1,13 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 
+
 class Steps(BaseModel):
     steps: int = None
 
 
 app = FastAPI()
+
 
 def statics():
     statics.fibonacci_old = 0
@@ -14,7 +16,6 @@ def statics():
 
 statics.fibonacci_old = 0
 statics.fibonacci_new = -1
-
 
 JSON_KEY = "fibonacci"
 
