@@ -10,7 +10,8 @@ app = FastAPI()
 def statics():
     statics.fibonacci_old = 0
     statics.fibonacci_new = -1
-    #print "Counter is %d" % foo.counter
+
+
 statics.fibonacci_old = 0
 statics.fibonacci_new = -1
 
@@ -22,12 +23,14 @@ JSON_KEY = "fibonacci"
 async def root():
     return {"message": "Hello World"}
 
+
 @app.get("/fibonacci")
 async def get_fibonacci():
     if statics.fibonacci_new == -1:
         return {JSON_KEY: 0}
     else:
         return {JSON_KEY: statics.fibonacci_new}
+
 
 @app.post("/fibonacci")
 async def calculate_steps(steps: Steps):
