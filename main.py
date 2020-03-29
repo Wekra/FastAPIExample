@@ -54,3 +54,10 @@ async def calculate_steps(steps: Steps):
             statics.fibonacci_old = statics.fibonacci_new
             statics.fibonacci_new = temp
             return {JSON_KEY: temp}
+
+
+@app.delete("/fibonacci")
+async def reset():
+    statics.fibonacci_old = 0
+    statics.fibonacci_new = -1
+    return {"message": "Successfully reset fibonacci."}
