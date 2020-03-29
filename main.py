@@ -38,16 +38,16 @@ async def calculate_steps(steps: Steps):
     if steps.steps is not None:
         for x in range(0, steps.steps):
             if statics.fibonacci_new == -1:
-                statics.fibonacci_new = 1;
+                statics.fibonacci_new = 1
             else:
                 temp = statics.fibonacci_old + statics.fibonacci_new
                 statics.fibonacci_old = statics.fibonacci_new
                 statics.fibonacci_new = temp 
         return {JSON_KEY: statics.fibonacci_new}
-        
+
     else:
         if statics.fibonacci_new == -1:
-            statics.fibonacci_new = 1;
+            statics.fibonacci_new = 1
             return {JSON_KEY: statics.fibonacci_new}
         else:
             temp = statics.fibonacci_old + statics.fibonacci_new
